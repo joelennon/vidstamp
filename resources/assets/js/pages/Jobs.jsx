@@ -49,6 +49,8 @@ class Jobs extends Component {
                     <table className="table">
                         <colgroup>
                             <col />
+                            <col style={{ width: '170px' }} />
+                            <col style={{ width: '170px' }} />
                             <col style={{ width: '210px' }} />
                             <col style={{ width: '210px' }} />
                             <col style={{ width: '100px' }} />
@@ -56,6 +58,8 @@ class Jobs extends Component {
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Size</th>
+                                <th>Type</th>
                                 <th>Created</th>
                                 <th>Updated</th>
                                 <th className="text-right">Actions</th>
@@ -65,6 +69,8 @@ class Jobs extends Component {
                             {list.map((job, index) => (
                                 <tr key={index}>
                                     <td>{job.id}</td>
+                                    <td>{job.human_video_size}</td>
+                                    <td>{job.video_mime}</td>
                                     <td>{job.created_at}</td>
                                     <td>{job.updated_at}</td>
                                     <td className="text-right">

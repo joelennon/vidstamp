@@ -68,6 +68,12 @@ class ShowJob extends Component {
                         <dt>Updated:</dt>
                         <dd>{data.updated_at}</dd>
 
+                        <dt>File Size:</dt>
+                        <dd>{data.human_video_size}</dd>
+
+                        <dt>MIME Type:</dt>
+                        <dd>{data.video_mime}</dd>
+
                         {data.video_path &&
                             <div>
                                 <dt>Original Video:</dt>
