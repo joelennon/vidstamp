@@ -68,7 +68,7 @@ class Jobs extends Component {
                                     <td>{job.created_at}</td>
                                     <td>{job.updated_at}</td>
                                     <td className="text-right">
-                                        <a href="#" className="btn btn-sm btn-light">View</a>
+                                        <Link to={`/jobs/${job.id}`} className="btn btn-sm btn-light">View</Link>
                                     </td>
                                 </tr>
                             ))}

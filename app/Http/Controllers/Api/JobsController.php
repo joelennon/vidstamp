@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Job;
+use Illuminate\Http\Request;
 
 class JobsController extends Controller
 {
@@ -18,7 +19,20 @@ class JobsController extends Controller
 
     public function store(Request $request)
     {
-        $job = $request->user()->jobs()->create();
+        $video_path = $request->video->store('videos');
+
+        $job = $request->user()->jobs()->create(
+            [
+                'video_path' => $video_path,
+            ]
+        );
+
+        return $job;
+    }
+
+    public function show(Request $request, Job $job)
+    {
+        $this->authorize('view', $job);
 
         return $job;
     }

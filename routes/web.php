@@ -17,4 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/app/{path?}', 'AppController@index')->name('app')->where('path', '.*');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/app/{path?}', 'AppController@index')->name('app')->where('path', '.*');
+    Route::get('/jobs/{job}/video', 'VideosController@show');
+});
