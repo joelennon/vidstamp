@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use App\Job;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class JobsController extends Controller
 {
@@ -24,6 +25,8 @@ class JobsController extends Controller
         $job = $request->user()->jobs()->create(
             [
                 'video_path' => $video_path,
+                'video_size' => Storage::size($video_path),
+                'video_mime' => Storage::mimeType($video_path),
             ]
         );
 
