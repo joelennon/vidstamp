@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { toast } from 'react-toastify';
 
 import Body from '../layouts/Body';
 import Api from '../api/Jobs';
@@ -6,6 +7,8 @@ import Api from '../api/Jobs';
 class CreateJob extends Component {
     state = {
         video: null,
+        valid: false,
+        saving: false,
     }
 
     back = () => {
@@ -16,23 +19,33 @@ class CreateJob extends Component {
 
     save = (event) => {
         const { video } = this.state;
+        const { history } = this.props;
 
         event.preventDefault();
 
-        Api.store({ video }, (success, response) => {
-            alert(success ? `Job #${response.id} created successfully.` : response.message);
-        });
+        this.setState({ saving: true }, () => {
+            Api.store({ video }, (success, response) => {
+                history.push(`/jobs/${response.id}`);
+                toast.success('Job submitted successfully.');
+            });
+        });        
     }
 
     onSelectVideo = (event) => {
         const { files } = event.target;
 
         if(files.length === 1) {
-            this.setState({ video: files[0] });
+            this.setState({ video: files[0] }, this.validate);
         }
     }
 
+    validate = () => {
+        this.setState({ valid: this.state.video != null });
+    }
+
     render() {
+        const { valid, saving } = this.state;
+
         return (
             <Body>
                 <form onSubmit={this.save}>
@@ -50,8 +63,8 @@ class CreateJob extends Component {
                         </div>
                     </div>
 
-                    <div className="mt-4 py-3 border-top border-light">
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                    <div className="py-3 border-top border-light">
+                        <button type="submit" className="btn btn-primary" disabled={!valid || saving }>{ saving ? 'Uploading...' : 'Submit' }</button>
                     </div>
                 </form>
             </Body>
