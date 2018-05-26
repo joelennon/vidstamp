@@ -31,13 +31,13 @@ class NavBar extends Component {
 
     render() {
         const { isOpen } = this.state;
-        const { user } = window.appData;
+        const { appName, user } = window.appData;
         const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
         return (
             <Navbar color="light" light expand="md">
                 <div className="container">
-                    <Link to="/" className="navbar-brand mr-4">Vidstamp</Link>
+                    <Link to="/" className="navbar-brand mr-4">{appName}</Link>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav navbar>
