@@ -15,4 +15,5 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => 'auth:api'], function() {
     Route::get('/jobs', 'JobsController@index');
+    Route::post('/jobs', 'JobsController@store');
 });
