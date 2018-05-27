@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
@@ -38,7 +39,11 @@ class JobsController extends Controller
         $filter = '"[1]lut=a=val*0.5[a];[0][a]overlay=W-w-5:H-h-5"';
         $command = "ffmpeg -i $inputVideo -i $watermarkImage -filter_complex $filter $outputVideo";
         
-        exec($command);
+        $result = exec($command, $output, $exitCode);
+
+        Log::info($exitCode);
+        Log::info($result);
+        Log::info(json_encode($output));
 
         return $job;
     }
