@@ -30,6 +30,16 @@ class JobsController extends Controller
             ]
         );
 
+        // Run job (move to queued job)
+        $inputVideo = storage_path() . "/app/$job->video_path";
+        $watermarkImage = public_path() . "/img/watermark.png";
+        $outputVideo = str_replace('/videos/', '/videos-watermarked/', $inputVideo);
+        
+        $filter = '"[1]lut=a=val*0.5[a];[0][a]overlay=W-w-5:H-h-5"';
+        $command = "ffmpeg -i $inputVideo -i $watermarkImage -filter_complex $filter $outputVideo";
+        
+        exec($command);
+
         return $job;
     }
 
