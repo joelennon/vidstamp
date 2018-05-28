@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
+import VideoTabs from './Show/VideoTabs';
 import Body from '../layouts/Body';
 import Api from '../api/Jobs';
 
@@ -8,6 +10,7 @@ const initialState = {
     loading: false,
     data: null,
     error: null,
+    dropdownOpen: false,
 }
 
 class ShowJob extends Component {
@@ -37,6 +40,10 @@ class ShowJob extends Component {
 
         history.push('/jobs');
     }
+    
+    toggle = () => {
+        this.setState({ dropdownOpen: !this.state.dropdownOpen });
+    }
 
     componentDidMount() {
         const { id } = this.props.match.params;
@@ -50,41 +57,72 @@ class ShowJob extends Component {
 
         return (
             <Body>
+                {data && <span className="mt-2 badge badge-success float-right"><div className="px-2 py-1" style={{ fontSize: '1.5em' }}>{data.status}</div></span>}
                 <h1 className="border-bottom border-light pb-3">
                     <button className="btn btn-light mr-4 align-text-bottom" onClick={this.back}>&lt;</button>
-                    Job #{id}
+                    {data && data.video_filename} <small className="text-muted">(Job #{id})</small>
                 </h1>
 
                 {loading && <div>Loading job...</div>}
                 {error && <div>Error: {error}</div>}
                 {ready &&
-                    <dl>
-                        <dt>ID:</dt>
-                        <dd>{data.id}</dd>
-
-                        <dt>Created:</dt>
-                        <dd>{data.created_at}</dd>
-
-                        <dt>Updated:</dt>
-                        <dd>{data.updated_at}</dd>
-
-                        <dt>File Size:</dt>
-                        <dd>{data.human_video_size}</dd>
-
-                        <dt>MIME Type:</dt>
-                        <dd>{data.video_mime}</dd>
-
-                        {data.video_path &&
-                            <div>
-                                <dt>Original Video:</dt>
-                                <dd>
-                                    <div className="embed-responsive embed-responsive-16by9 bg-dark border">
-                                        <video className="embed-responsive-item" src={`/jobs/${data.id}/video`} controls />
-                                    </div>
-                                </dd>
+                    <div className="row">
+                        <div className="col-lg-9">
+                            <VideoTabs job={data} />
+                        </div>
+                        <div className="col-lg-3">
+                            <div className="mb-4">
+                                <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="btn-block">
+                                    <DropdownToggle caret color="primary" className="btn-block">
+                                        Download
+                                    </DropdownToggle>
+                                    <DropdownMenu right>
+                                        <DropdownItem header>Video Files</DropdownItem>
+                                        {data.output_video_path &&
+                                            <DropdownItem href={`/jobs/${data.id}/video?output=1&dl=1`}>Download Watermarked Video</DropdownItem>
+                                        }
+                                        {data.video_path &&
+                                            <DropdownItem href={`/jobs/${data.id}/video?dl=1`}>Download Original Video</DropdownItem>
+                                        }
+                                        <DropdownItem divider /> 
+                                        <DropdownItem header>Image Files</DropdownItem>                                                                               
+                                        <DropdownItem disabled>Download Watermark Image</DropdownItem>                                        
+                                    </DropdownMenu>
+                                </ButtonDropdown>
                             </div>
-                        }
-                    </dl>
+                            <div className="card">
+                                <h5 className="card-header">Job Properties</h5>
+                                <div className="card-body">
+                                    <dl>
+                                        <dt>Job ID:</dt>
+                                        <dd>{data.id}</dd>
+
+                                        {data.job_duration &&
+                                            <div>
+                                                <dt>Job Duration:</dt>
+                                                <dd>{data.job_duration}</dd>
+                                            </div>
+                                        }
+
+                                        <dt>Filename:</dt>
+                                        <dd>{data.video_filename}</dd>
+
+                                        <dt>Created:</dt>
+                                        <dd>{data.created_at}</dd>
+
+                                        <dt>Updated:</dt>
+                                        <dd>{data.updated_at}</dd>
+
+                                        <dt>File Size:</dt>
+                                        <dd>{data.human_video_size}</dd>
+
+                                        <dt>MIME Type:</dt>
+                                        <dd>{data.video_mime}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 }
             </Body>
         );

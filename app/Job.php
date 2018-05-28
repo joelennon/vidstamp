@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model
 {
     protected $fillable = [
-        'video_path', 'video_size', 'video_mime',
+        'video_filename', 'status', 'video_path', 'video_size', 'video_mime',
+        'queued_at',
     ];
 
     protected $appends = [
-        'human_video_size',
+        'human_video_size', 'job_duration',
+    ];
+
+    protected $dates = [
+        'queued_at', 'started_at', 'ended_at',
     ];
 
     public function getHumanVideoSizeAttribute()
@@ -26,6 +31,15 @@ class Job extends Model
             return round($bytes, 2) . ' ' . $units[$i];
         }
         
+        return null;
+    }
+
+    public function getJobDurationAttribute()
+    {
+        if($this->started_at && $this->ended_at) {
+            return $this->started_at->diffForHumans($this->ended_at, true);
+        }
+
         return null;
     }
 }

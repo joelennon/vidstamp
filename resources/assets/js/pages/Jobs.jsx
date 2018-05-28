@@ -31,6 +31,18 @@ class Jobs extends Component {
         this.load();
     }
 
+    getStatusClassName = (status) => {
+        if(status === 'Complete') {
+            return 'success';
+        } else if (status === 'Failed') {
+            return 'danger';
+        } else if(status === 'Processing') {
+            return 'info';
+        }
+
+        return 'dark';
+    }
+
     render() {
         const { loading, list, error } = this.state;
 
@@ -48,36 +60,43 @@ class Jobs extends Component {
                 {ready &&
                     <table className="table">
                         <colgroup>
-                            <col />
-                            <col style={{ width: '170px' }} />
-                            <col style={{ width: '170px' }} />
-                            <col style={{ width: '210px' }} />
-                            <col style={{ width: '210px' }} />
                             <col style={{ width: '100px' }} />
+                            <col />
+                            <col style={{ width: '130px' }} />
+                            <col style={{ width: '130px' }} />
+                            <col style={{ width: '130px' }} />
+                            <col style={{ width: '180px' }} />
+                            <col style={{ width: '80px' }} />
                         </colgroup>
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Filename</th>
+                                <th>Status</th>
                                 <th>Size</th>
                                 <th>Type</th>
                                 <th>Created</th>
-                                <th>Updated</th>
-                                <th className="text-right">Actions</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            {list.map((job, index) => (
-                                <tr key={index}>
-                                    <td>{job.id}</td>
-                                    <td>{job.human_video_size}</td>
-                                    <td>{job.video_mime}</td>
-                                    <td>{job.created_at}</td>
-                                    <td>{job.updated_at}</td>
-                                    <td className="text-right">
-                                        <Link to={`/jobs/${job.id}`} className="btn btn-sm btn-light">View</Link>
-                                    </td>
-                                </tr>
-                            ))}
+                            {list.map((job, index) => {                                
+                                return (
+                                    <tr key={index}>
+                                        <td className="align-middle">{job.id}</td>
+                                        <td className="align-middle">{job.video_filename}</td>
+                                        <td className="align-middle">
+                                            <span className={`badge badge-${this.getStatusClassName(job.status)}`}>{job.status}</span>
+                                        </td>
+                                        <td className="align-middle">{job.human_video_size}</td>
+                                        <td className="align-middle">{job.video_mime}</td>
+                                        <td className="align-middle">{job.created_at}</td>
+                                        <td className="text-right">
+                                            <Link to={`/jobs/${job.id}`} className="btn btn-sm btn-light">View</Link>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
                 }

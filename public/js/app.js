@@ -34896,23 +34896,23 @@ if (false) {
 /* unused harmony export Container */
 /* unused harmony export Row */
 /* unused harmony export Col */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return Navbar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return Navbar; });
 /* unused harmony export NavbarBrand */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return NavbarToggler; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Nav; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return NavItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return NavbarToggler; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return Nav; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return NavItem; });
 /* unused harmony export NavDropdown */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return NavLink; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return NavLink; });
 /* unused harmony export Breadcrumb */
 /* unused harmony export BreadcrumbItem */
 /* unused harmony export Button */
-/* unused harmony export ButtonDropdown */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ButtonDropdown; });
 /* unused harmony export ButtonGroup */
 /* unused harmony export ButtonToolbar */
 /* unused harmony export Dropdown */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DropdownItem; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return DropdownMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return DropdownToggle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return DropdownItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return DropdownMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return DropdownToggle; });
 /* unused harmony export Fade */
 /* unused harmony export Badge */
 /* unused harmony export Card */
@@ -34966,16 +34966,16 @@ if (false) {
 /* unused harmony export Pagination */
 /* unused harmony export PaginationItem */
 /* unused harmony export PaginationLink */
-/* unused harmony export TabContent */
-/* unused harmony export TabPane */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return TabContent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return TabPane; });
 /* unused harmony export Jumbotron */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Collapse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Collapse; });
 /* unused harmony export ListGroupItem */
 /* unused harmony export ListGroupItemText */
 /* unused harmony export ListGroupItemHeading */
 /* unused harmony export UncontrolledAlert */
 /* unused harmony export UncontrolledButtonDropdown */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return UncontrolledDropdown; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return UncontrolledDropdown; });
 /* unused harmony export UncontrolledNavDropdown */
 /* unused harmony export UncontrolledTooltip */
 /* unused harmony export Util */
@@ -42606,7 +42606,7 @@ var NavBar = function (_Component) {
             var csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
             return __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_6_reactstrap__["h" /* Navbar */],
+                __WEBPACK_IMPORTED_MODULE_6_reactstrap__["i" /* Navbar */],
                 { color: 'light', light: true, expand: 'md' },
                 __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
                     'div',
@@ -42616,15 +42616,15 @@ var NavBar = function (_Component) {
                         { to: '/', className: 'navbar-brand mr-4' },
                         appName
                     ),
-                    __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_reactstrap__["i" /* NavbarToggler */], { onClick: this.toggle }),
+                    __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_reactstrap__["j" /* NavbarToggler */], { onClick: this.toggle }),
                     __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_6_reactstrap__["a" /* Collapse */],
+                        __WEBPACK_IMPORTED_MODULE_6_reactstrap__["b" /* Collapse */],
                         { isOpen: isOpen, navbar: true },
                         __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-                            __WEBPACK_IMPORTED_MODULE_6_reactstrap__["e" /* Nav */],
+                            __WEBPACK_IMPORTED_MODULE_6_reactstrap__["f" /* Nav */],
                             { navbar: true },
                             __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-                                __WEBPACK_IMPORTED_MODULE_6_reactstrap__["f" /* NavItem */],
+                                __WEBPACK_IMPORTED_MODULE_6_reactstrap__["g" /* NavItem */],
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["c" /* NavLink */],
@@ -42634,34 +42634,34 @@ var NavBar = function (_Component) {
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-                            __WEBPACK_IMPORTED_MODULE_6_reactstrap__["e" /* Nav */],
+                            __WEBPACK_IMPORTED_MODULE_6_reactstrap__["f" /* Nav */],
                             { className: 'ml-auto', navbar: true },
                             __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-                                __WEBPACK_IMPORTED_MODULE_6_reactstrap__["f" /* NavItem */],
+                                __WEBPACK_IMPORTED_MODULE_6_reactstrap__["g" /* NavItem */],
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_reactstrap__["g" /* NavLink */],
+                                    __WEBPACK_IMPORTED_MODULE_6_reactstrap__["h" /* NavLink */],
                                     { href: 'https://github.com/joelennon/vidstamp', target: '_blank' },
                                     'GitHub'
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-                                __WEBPACK_IMPORTED_MODULE_6_reactstrap__["j" /* UncontrolledDropdown */],
+                                __WEBPACK_IMPORTED_MODULE_6_reactstrap__["m" /* UncontrolledDropdown */],
                                 { nav: true, inNavbar: true },
                                 __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_reactstrap__["d" /* DropdownToggle */],
+                                    __WEBPACK_IMPORTED_MODULE_6_reactstrap__["e" /* DropdownToggle */],
                                     { nav: true, caret: true },
                                     user.name
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_reactstrap__["c" /* DropdownMenu */],
+                                    __WEBPACK_IMPORTED_MODULE_6_reactstrap__["d" /* DropdownMenu */],
                                     { right: true },
                                     __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
                                         'form',
                                         { method: 'post', action: '/logout' },
                                         __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('input', { type: 'hidden', name: '_token', value: csrfToken }),
                                         __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_6_reactstrap__["b" /* DropdownItem */],
+                                            __WEBPACK_IMPORTED_MODULE_6_reactstrap__["c" /* DropdownItem */],
                                             { tag: 'button', type: 'submit' },
                                             'Logout'
                                         )
@@ -42932,6 +42932,16 @@ var Jobs = function (_Component) {
                     error: success ? null : response.message
                 });
             });
+        }, _this.getStatusClassName = function (status) {
+            if (status === 'Complete') {
+                return 'success';
+            } else if (status === 'Failed') {
+                return 'danger';
+            } else if (status === 'Processing') {
+                return 'info';
+            }
+
+            return 'dark';
         }, _temp), __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default()(_this, _ret);
     }
 
@@ -42943,6 +42953,8 @@ var Jobs = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var _state = this.state,
                 loading = _state.loading,
                 list = _state.list,
@@ -42986,12 +42998,13 @@ var Jobs = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                         'colgroup',
                         null,
+                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', { style: { width: '100px' } }),
                         __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', null),
-                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', { style: { width: '170px' } }),
-                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', { style: { width: '170px' } }),
-                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', { style: { width: '210px' } }),
-                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', { style: { width: '210px' } }),
-                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', { style: { width: '100px' } })
+                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', { style: { width: '130px' } }),
+                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', { style: { width: '130px' } }),
+                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', { style: { width: '130px' } }),
+                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', { style: { width: '180px' } }),
+                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('col', { style: { width: '80px' } })
                     ),
                     __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                         'thead',
@@ -43003,6 +43016,16 @@ var Jobs = function (_Component) {
                                 'th',
                                 null,
                                 'ID'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                'th',
+                                null,
+                                'Filename'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                'th',
+                                null,
+                                'Status'
                             ),
                             __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                                 'th',
@@ -43019,16 +43042,7 @@ var Jobs = function (_Component) {
                                 null,
                                 'Created'
                             ),
-                            __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                                'th',
-                                null,
-                                'Updated'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                                'th',
-                                { className: 'text-right' },
-                                'Actions'
-                            )
+                            __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('th', null)
                         )
                     ),
                     __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
@@ -43040,28 +43054,37 @@ var Jobs = function (_Component) {
                                 { key: index },
                                 __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                                     'td',
-                                    null,
+                                    { className: 'align-middle' },
                                     job.id
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                                     'td',
-                                    null,
+                                    { className: 'align-middle' },
+                                    job.video_filename
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                    'td',
+                                    { className: 'align-middle' },
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'span',
+                                        { className: 'badge badge-' + _this2.getStatusClassName(job.status) },
+                                        job.status
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                    'td',
+                                    { className: 'align-middle' },
                                     job.human_video_size
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                                     'td',
-                                    null,
+                                    { className: 'align-middle' },
                                     job.video_mime
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                                     'td',
-                                    null,
+                                    { className: 'align-middle' },
                                     job.created_at
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                                    'td',
-                                    null,
-                                    job.updated_at
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                                     'td',
@@ -43087,6 +43110,140 @@ var Jobs = function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/assets/js/pages/Show/VideoTabs.jsx":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_classCallCheck__ = __webpack_require__("./node_modules/babel-runtime/helpers/classCallCheck.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_classCallCheck___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_classCallCheck__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_createClass__ = __webpack_require__("./node_modules/babel-runtime/helpers/createClass.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_createClass___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_createClass__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_possibleConstructorReturn__ = __webpack_require__("./node_modules/babel-runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_possibleConstructorReturn___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_possibleConstructorReturn__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_inherits__ = __webpack_require__("./node_modules/babel-runtime/helpers/inherits.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_inherits___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_inherits__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react__ = __webpack_require__("./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_reactstrap__ = __webpack_require__("./node_modules/reactstrap/dist/reactstrap.es.js");
+
+
+
+
+
+
+
+var VideoTabs = function (_Component) {
+    __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_inherits___default()(VideoTabs, _Component);
+
+    function VideoTabs() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_classCallCheck___default()(this, VideoTabs);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_possibleConstructorReturn___default()(this, (_ref = VideoTabs.__proto__ || Object.getPrototypeOf(VideoTabs)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            activeTab: '1'
+        }, _this.toggle = function (tab) {
+            if (_this.state.activeTab !== tab) {
+                _this.setState({
+                    activeTab: tab
+                });
+            }
+        }, _temp), __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_possibleConstructorReturn___default()(_this, _ret);
+    }
+
+    __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_createClass___default()(VideoTabs, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var job = this.props.job;
+            var activeTab = this.state.activeTab;
+
+
+            return __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                'div',
+                null,
+                __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_5_reactstrap__["f" /* Nav */],
+                    { tabs: true },
+                    __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_5_reactstrap__["g" /* NavItem */],
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_5_reactstrap__["h" /* NavLink */],
+                            {
+                                className: activeTab === '1' ? 'active' : '',
+                                onClick: function onClick() {
+                                    _this2.toggle('1');
+                                }
+                            },
+                            'Watermarked Video'
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_5_reactstrap__["g" /* NavItem */],
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_5_reactstrap__["h" /* NavLink */],
+                            {
+                                className: activeTab === '2' ? 'active' : '',
+                                onClick: function onClick() {
+                                    _this2.toggle('2');
+                                }
+                            },
+                            'Original Video'
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_5_reactstrap__["k" /* TabContent */],
+                    { activeTab: this.state.activeTab },
+                    __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_5_reactstrap__["l" /* TabPane */],
+                        { tabId: '1', className: 'py-4' },
+                        ['Queued', 'Processing'].includes(job.status) && __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                            'div',
+                            { className: 'lead text-center' },
+                            'Watermark job running. Refresh to check if it\'s completed.'
+                        ),
+                        job.status == 'Failed' && __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                            'div',
+                            { className: 'lead text-center text-danger' },
+                            'The watermark job failed.'
+                        ),
+                        job.output_video_path && __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                            'div',
+                            { className: 'embed-responsive embed-responsive-16by9' },
+                            __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('video', { className: 'embed-responsive-item', src: '/jobs/' + job.id + '/video?output=1', controls: true })
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_5_reactstrap__["l" /* TabPane */],
+                        { tabId: '2', className: 'py-4' },
+                        job.video_path && __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
+                            'div',
+                            { className: 'embed-responsive embed-responsive-16by9' },
+                            __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement('video', { className: 'embed-responsive-item', src: '/jobs/' + job.id + '/video', controls: true })
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return VideoTabs;
+}(__WEBPACK_IMPORTED_MODULE_4_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (VideoTabs);
+
+/***/ }),
+
 /***/ "./resources/assets/js/pages/ShowJob.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -43103,8 +43260,12 @@ var Jobs = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react__ = __webpack_require__("./node_modules/react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__layouts_Body__ = __webpack_require__("./resources/assets/js/layouts/Body.jsx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__api_Jobs__ = __webpack_require__("./resources/assets/js/api/Jobs.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_reactstrap__ = __webpack_require__("./node_modules/reactstrap/dist/reactstrap.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Show_VideoTabs__ = __webpack_require__("./resources/assets/js/pages/Show/VideoTabs.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__layouts_Body__ = __webpack_require__("./resources/assets/js/layouts/Body.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__api_Jobs__ = __webpack_require__("./resources/assets/js/api/Jobs.js");
+
+
 
 
 
@@ -43119,7 +43280,8 @@ var initialState = {
     id: null,
     loading: false,
     data: null,
-    error: null
+    error: null,
+    dropdownOpen: false
 };
 
 var ShowJob = function (_Component) {
@@ -43145,7 +43307,7 @@ var ShowJob = function (_Component) {
             var id = _this.state.id;
 
 
-            __WEBPACK_IMPORTED_MODULE_7__api_Jobs__["a" /* default */].show(id, function (success, response) {
+            __WEBPACK_IMPORTED_MODULE_9__api_Jobs__["a" /* default */].show(id, function (success, response) {
                 _this.setState(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, initialState, {
                     id: id,
                     data: success ? response : null,
@@ -43157,6 +43319,8 @@ var ShowJob = function (_Component) {
 
 
             history.push('/jobs');
+        }, _this.toggle = function () {
+            _this.setState({ dropdownOpen: !_this.state.dropdownOpen });
         }, _temp), __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default()(_this, _ret);
     }
 
@@ -43180,8 +43344,17 @@ var ShowJob = function (_Component) {
             var ready = !loading && !error && data;
 
             return __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_6__layouts_Body__["a" /* default */],
+                __WEBPACK_IMPORTED_MODULE_8__layouts_Body__["a" /* default */],
                 null,
+                data && __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                    'span',
+                    { className: 'mt-2 badge badge-success float-right' },
+                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                        'div',
+                        { className: 'px-2 py-1', style: { fontSize: '1.5em' } },
+                        data.status
+                    )
+                ),
                 __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                     'h1',
                     { className: 'border-bottom border-light pb-3' },
@@ -43190,8 +43363,15 @@ var ShowJob = function (_Component) {
                         { className: 'btn btn-light mr-4 align-text-bottom', onClick: this.back },
                         '<'
                     ),
-                    'Job #',
-                    id
+                    data && data.video_filename,
+                    ' ',
+                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                        'small',
+                        { className: 'text-muted' },
+                        '(Job #',
+                        id,
+                        ')'
+                    )
                 ),
                 loading && __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                     'div',
@@ -43205,73 +43385,148 @@ var ShowJob = function (_Component) {
                     error
                 ),
                 ready && __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                    'dl',
-                    null,
+                    'div',
+                    { className: 'row' },
                     __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                        'dt',
-                        null,
-                        'ID:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                        'dd',
-                        null,
-                        data.id
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                        'dt',
-                        null,
-                        'Created:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                        'dd',
-                        null,
-                        data.created_at
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                        'dt',
-                        null,
-                        'Updated:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                        'dd',
-                        null,
-                        data.updated_at
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                        'dt',
-                        null,
-                        'File Size:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                        'dd',
-                        null,
-                        data.human_video_size
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                        'dt',
-                        null,
-                        'MIME Type:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                        'dd',
-                        null,
-                        data.video_mime
-                    ),
-                    data.video_path && __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                         'div',
-                        null,
+                        { className: 'col-lg-9' },
+                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__Show_VideoTabs__["a" /* default */], { job: data })
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                        'div',
+                        { className: 'col-lg-3' },
                         __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                            'dt',
-                            null,
-                            'Original Video:'
+                            'div',
+                            { className: 'mb-4' },
+                            __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_6_reactstrap__["a" /* ButtonDropdown */],
+                                { isOpen: this.state.dropdownOpen, toggle: this.toggle, className: 'btn-block' },
+                                __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_6_reactstrap__["e" /* DropdownToggle */],
+                                    { caret: true, color: 'primary', className: 'btn-block' },
+                                    'Download'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_6_reactstrap__["d" /* DropdownMenu */],
+                                    { right: true },
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_6_reactstrap__["c" /* DropdownItem */],
+                                        { header: true },
+                                        'Video Files'
+                                    ),
+                                    data.output_video_path && __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_6_reactstrap__["c" /* DropdownItem */],
+                                        { href: '/jobs/' + data.id + '/video?output=1&dl=1' },
+                                        'Download Watermarked Video'
+                                    ),
+                                    data.video_path && __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_6_reactstrap__["c" /* DropdownItem */],
+                                        { href: '/jobs/' + data.id + '/video?dl=1' },
+                                        'Download Original Video'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_reactstrap__["c" /* DropdownItem */], { divider: true }),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_6_reactstrap__["c" /* DropdownItem */],
+                                        { header: true },
+                                        'Image Files'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_6_reactstrap__["c" /* DropdownItem */],
+                                        { disabled: true },
+                                        'Download Watermark Image'
+                                    )
+                                )
+                            )
                         ),
                         __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-                            'dd',
-                            null,
+                            'div',
+                            { className: 'card' },
+                            __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                'h5',
+                                { className: 'card-header' },
+                                'Job Properties'
+                            ),
                             __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
                                 'div',
-                                { className: 'embed-responsive embed-responsive-16by9 bg-dark border' },
-                                __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('video', { className: 'embed-responsive-item', src: '/jobs/' + data.id + '/video', controls: true })
+                                { className: 'card-body' },
+                                __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                    'dl',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dt',
+                                        null,
+                                        'Job ID:'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dd',
+                                        null,
+                                        data.id
+                                    ),
+                                    data.job_duration && __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'div',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                            'dt',
+                                            null,
+                                            'Job Duration:'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                            'dd',
+                                            null,
+                                            data.job_duration
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dt',
+                                        null,
+                                        'Filename:'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dd',
+                                        null,
+                                        data.video_filename
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dt',
+                                        null,
+                                        'Created:'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dd',
+                                        null,
+                                        data.created_at
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dt',
+                                        null,
+                                        'Updated:'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dd',
+                                        null,
+                                        data.updated_at
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dt',
+                                        null,
+                                        'File Size:'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dd',
+                                        null,
+                                        data.human_video_size
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dt',
+                                        null,
+                                        'MIME Type:'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+                                        'dd',
+                                        null,
+                                        data.video_mime
+                                    )
+                                )
                             )
                         )
                     )
