@@ -5,6 +5,7 @@ namespace App\Jobs;
 use App\Job;
 use Illuminate\Bus\Queueable;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -64,6 +65,9 @@ class ApplyWatermarkToVideo implements ShouldQueue
 
         $result = exec($command, $output, $exitCode);
 
+        Log::info("Result: $result");
+        Log::info("Exit Code: $exitCode");
+        Log::info("Output: " . json_encode($output));
 
         if ($exitCode === 0) {
             $job->output_video_path = $outputPath;
