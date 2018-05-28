@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import Empty from '../components/Empty';
 import Body from '../layouts/Body';
 import Api from '../api/Jobs';
 
@@ -18,7 +19,7 @@ class Jobs extends Component {
     }
 
     fetch = () => {
-        Api.index((success, response) => {
+        Api.index(false, (success, response) => {
             this.setState({
                 loading: false,
                 list: success ? response : [],
@@ -59,7 +60,7 @@ class Jobs extends Component {
                 </div>
                 {loading && <div>Loading jobs...</div>}
                 {error && <div>Error: {error}</div>}
-                {empty && <div>No jobs to display.</div>}
+                {empty && <Empty />}
                 {ready &&
                     <table className="table">
                         <colgroup>

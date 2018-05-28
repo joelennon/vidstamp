@@ -107,13 +107,13 @@ class CreateJob extends Component {
                         <div className="form-group">
                             <label htmlFor="video">Video</label>
                             <input className={`${videoError ? 'is-invalid' : ''} form-control-file`} type="file" name="video" id="video" accept="video/mp4" onChange={this.onSelectVideo} />
-                            {videoError && <div className="invalid-feedback">{videoError}</div>}
+                            {videoError ? <div className="invalid-feedback">{videoError}</div> : <small className="form-text text-muted">MP4 videos only. Max 10MB</small>}
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="watermark">Watermark Image</label>
                             <input className={`${watermarkError ? 'is-invalid' : ''} form-control-file`} type="file" name="watermark" id="watermark" accept="image/*" onChange={this.onSelectWatermark} />
-                            {watermarkError && <div className="invalid-feedback">{watermarkError}</div>}
+                            {watermarkError ? <div className="invalid-feedback">{watermarkError}</div> : <small className="form-text text-muted">Images only. Minimum dimensions 50x50, Max 500x350.</small>}
                         </div>
 
                         <div className="row">

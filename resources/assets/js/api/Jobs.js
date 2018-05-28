@@ -1,8 +1,8 @@
 import Api from './Api';
 
-async function index(callback) {
+async function index(limit, callback) {
     try {
-        const response = await Api.get('jobs');
+        const response = await Api.get(`jobs?limit=${limit}`);
 
         if (callback) callback(true, response.data);
     } catch (err) {

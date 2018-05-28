@@ -12,10 +12,12 @@ use Illuminate\Support\Facades\Storage;
 class JobsController extends Controller
 {
     public function index(Request $request)
-    {
+    {        
         $jobs = $request->user()->jobs()
-            ->orderBy('updated_at', 'desc')
-            ->get();
+            ->orderBy('created_at', 'desc');
+        
+        $limit = $request->query('limit') == 'true';
+        $jobs = $limit ? $jobs->limit(1)->get() : $jobs->get();            
 
         return $jobs;
     }
