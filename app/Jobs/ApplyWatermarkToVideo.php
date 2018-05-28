@@ -41,11 +41,25 @@ class ApplyWatermarkToVideo implements ShouldQueue
         $inputPath = $job->video_path;
         $outputPath = str_replace('videos/', 'videos-watermarked/', $inputPath);
 
-        $inputVideo = storage_path() . "/app/$inputPath";
-        $watermarkImage = public_path() . "/img/watermark.png";
+        $inputVideo = storage_path() . "/app/$inputPath";        
+        $watermarkImage = storage_path() . "/app/$job->watermark_path";
         $outputVideo = storage_path() . "/app/$outputPath";
 
-        $filter = '"[1]lut=a=val*0.5[a];[0][a]overlay=W-w-5:H-h-5"';
+        $opacity = $job->opacity;
+        $position = $job->position;
+
+        $overlay = "W-w-50:H-h-50";
+
+        if($position === 'top-right') {
+            $overlay = "W-w-50:50";
+        } else if($position === 'top-left') {
+            $overlay = "50:50";
+        } else if($position === 'bottom-left') {
+            $overlay = "50:H-h-50";
+        }
+
+        // $filter = '"[1]lut=a=val*' . $opacity . '[a];[0][a]overlay=W-w-50:H-h-50"';
+        $filter = '"[1]lut=a=val*' . $opacity . '[a];[0][a]overlay=' . $overlay . '"';
         $command = "ffmpeg -i $inputVideo -i $watermarkImage -filter_complex $filter $outputVideo";
 
         $result = exec($command, $output, $exitCode);

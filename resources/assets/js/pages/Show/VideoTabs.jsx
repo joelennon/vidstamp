@@ -44,14 +44,14 @@ class VideoTabs extends Component {
                         {job.status == 'Failed' && <div className="lead text-center text-danger">The watermark job failed.</div>}
                         {job.output_video_path &&
                             <div className="embed-responsive embed-responsive-16by9">
-                                <video className="embed-responsive-item" src={`/jobs/${job.id}/video?output=1`} controls />
+                                <video className="embed-responsive-item border bg-dark" src={`/jobs/${job.id}/video?output=1`} controls />
                             </div>
                         }
                     </TabPane>
                     <TabPane tabId="2" className="py-4">
                         {job.video_path &&
                             <div className="embed-responsive embed-responsive-16by9">
-                                <video className="embed-responsive-item" src={`/jobs/${job.id}/video`} controls />
+                                <video className="embed-responsive-item border bg-dark" src={`/jobs/${job.id}/video`} controls />
                             </div>
                         }
                     </TabPane>

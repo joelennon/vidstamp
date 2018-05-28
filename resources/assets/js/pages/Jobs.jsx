@@ -52,6 +52,9 @@ class Jobs extends Component {
         return (
             <Body>
                 <div className="mb-4">
+                    <div className="float-right">
+                        <button type="button" className="btn btn-light" onClick={this.load}>Refresh</button>
+                    </div>
                     <Link to="/jobs/create" className="btn btn-primary">New Job</Link>
                 </div>
                 {loading && <div>Loading jobs...</div>}

@@ -22,15 +22,20 @@ class JobsController extends Controller
     }
 
     public function store(Request $request)
-    {
+    {        
         $video = $request->video;
-        $video_filename = $video->getClientOriginalName();
-        $video_path = $video->store('videos');    
+        $video_filename = $video->getClientOriginalName();        
+        $video_path = $video->store('videos');
+
+        $watermark_path = $request->watermark->store('watermarks');
 
         $job = $request->user()->jobs()->create(
             [
                 'video_filename' => $video_filename,
                 'video_path' => $video_path,
+                'watermark_path' => $watermark_path,
+                'opacity' => $request->opacity ?: '0.5',
+                'position' => $request->position ?: 'bottom-right',
                 'video_size' => Storage::size($video_path),
                 'video_mime' => Storage::mimeType($video_path),
                 'status' => 'Queued',

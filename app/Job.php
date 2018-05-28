@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model
 {
     protected $fillable = [
-        'video_filename', 'status', 'video_path', 'video_size', 'video_mime',
+        'video_filename', 'status', 'video_path', 'watermark_path',
+        'opacity', 'position',
+        'video_size', 'video_mime',
         'queued_at',
     ];
 
     protected $appends = [
-        'human_video_size', 'job_duration',
+        'human_video_size', 'formatted_opacity', 'formatted_position', 'job_duration',
     ];
 
     protected $dates = [
@@ -32,6 +34,16 @@ class Job extends Model
         }
         
         return null;
+    }
+
+    public function getFormattedOpacityAttribute()
+    {
+        return $this->opacity * 100 . '%';
+    }
+
+    public function getFormattedPositionAttribute()
+    {
+        return ucwords(str_replace('-', ' ', $this->position));
     }
 
     public function getJobDurationAttribute()

@@ -14,6 +14,9 @@ async function store(data, callback) {
     try {
         const formData = new FormData();
         formData.append('video', data.video);
+        formData.append('watermark', data.watermark);
+        formData.set('opacity', data.opacity);
+        formData.set('position', data.position);
 
         const config = {
             headers: {

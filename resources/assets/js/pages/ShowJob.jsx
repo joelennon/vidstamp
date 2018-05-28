@@ -40,7 +40,7 @@ class ShowJob extends Component {
 
         history.push('/jobs');
     }
-    
+
     toggle = () => {
         this.setState({ dropdownOpen: !this.state.dropdownOpen });
     }
@@ -84,9 +84,9 @@ class ShowJob extends Component {
                                         {data.video_path &&
                                             <DropdownItem href={`/jobs/${data.id}/video?dl=1`}>Download Original Video</DropdownItem>
                                         }
-                                        <DropdownItem divider /> 
-                                        <DropdownItem header>Image Files</DropdownItem>                                                                               
-                                        <DropdownItem disabled>Download Watermark Image</DropdownItem>                                        
+                                        <DropdownItem divider />
+                                        <DropdownItem header>Image Files</DropdownItem>
+                                        <DropdownItem href={`/jobs/${data.id}/watermarks?dl=1`}>Download Watermark Image</DropdownItem>
                                     </DropdownMenu>
                                 </ButtonDropdown>
                             </div>
@@ -94,6 +94,9 @@ class ShowJob extends Component {
                                 <h5 className="card-header">Job Properties</h5>
                                 <div className="card-body">
                                     <dl>
+                                        <dt>Watermark Image:</dt>
+                                        <dd><img src={`/jobs/${data.id}/watermarks`} className="img-fluid" /></dd>
+                                        
                                         <dt>Job ID:</dt>
                                         <dd>{data.id}</dd>
 
@@ -104,20 +107,26 @@ class ShowJob extends Component {
                                             </div>
                                         }
 
+                                        <dt>Watermark Opacity:</dt>
+                                        <dd>{data.formatted_opacity}</dd>
+
+                                        <dt>Watermark Position:</dt>
+                                        <dd>{data.formatted_position}</dd>
+
                                         <dt>Filename:</dt>
                                         <dd>{data.video_filename}</dd>
-
-                                        <dt>Created:</dt>
-                                        <dd>{data.created_at}</dd>
-
-                                        <dt>Updated:</dt>
-                                        <dd>{data.updated_at}</dd>
 
                                         <dt>File Size:</dt>
                                         <dd>{data.human_video_size}</dd>
 
                                         <dt>MIME Type:</dt>
                                         <dd>{data.video_mime}</dd>
+
+                                        <dt>Created:</dt>
+                                        <dd>{data.created_at}</dd>
+
+                                        <dt>Updated:</dt>
+                                        <dd>{data.updated_at}</dd>
                                     </dl>
                                 </div>
                             </div>
