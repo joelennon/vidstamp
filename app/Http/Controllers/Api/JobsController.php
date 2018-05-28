@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Job;
+use App\Jobs\ApplyWatermarkToVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use App\Jobs\ApplyWatermarkToVideo;
-use Illuminate\Support\Facades\Log;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class JobsController extends Controller
@@ -22,9 +21,17 @@ class JobsController extends Controller
     }
 
     public function store(Request $request)
-    {        
+    {
+        $this->validate(
+            $request, 
+            [
+                'video' => 'mimes:mp4|max:10240',
+                'watermark' => 'image|max:1024|dimensions:min_width=50,min_height=50,max_width=500,max_height=350',
+            ]
+        );
+
         $video = $request->video;
-        $video_filename = $video->getClientOriginalName();        
+        $video_filename = $video->getClientOriginalName();
         $video_path = $video->store('videos');
 
         $watermark_path = $request->watermark->store('watermarks');

@@ -7,7 +7,9 @@ import Api from '../api/Jobs';
 class CreateJob extends Component {
     state = {
         video: null,
+        videoError: null,
         watermark: null,
+        watermarkError: null,
         opacity: 0.5,
         position: 'bottom-right',
         valid: false,
@@ -26,10 +28,23 @@ class CreateJob extends Component {
 
         event.preventDefault();
 
-        this.setState({ saving: true }, () => {
+        this.setState({ saving: true, videoError: null, watermarkError: null }, () => {
             Api.store({ video, watermark, opacity, position }, (success, response) => {
-                history.push(`/jobs`);
-                toast.success('Job submitted successfully.');
+                if(success) {
+                    history.push(`/jobs`);
+                    toast.success('Job submitted successfully.');
+                } else {
+                    const { errors } = response.response.data;
+
+                    this.setState({
+                        saving: false,
+                        valid: false,
+                        videoError: errors.video ? errors.video : null,
+                        watermarkError: errors.watermark ? errors.watermark : null
+                    });
+                    
+                    toast.error('Failed to submit job. Check errors.');
+                }         
             });
         });
     }
@@ -38,7 +53,13 @@ class CreateJob extends Component {
         const { files } = event.target;
 
         if (files.length === 1) {
-            this.setState({ video: files[0] }, this.validate);
+            const file = files[0];
+
+            if(file.size < 10240000) {
+                this.setState({ video: files[0] }, this.validate);            
+            } else {
+                this.setState({ videoError: 'The video selected is too large. Max video file size 10MB.'});
+            }
         }
     }
 
@@ -66,11 +87,11 @@ class CreateJob extends Component {
         const { video, watermark } = this.state;
         const valid = video && watermark;
 
-        this.setState({ valid });
+        this.setState({ valid, videoError: false, watermarkError: false });
     }
 
     render() {
-        const { opacity, position, valid, saving } = this.state;
+        const { opacity, position, valid, saving, videoError, watermarkError } = this.state;
 
         return (
             <Body>
@@ -85,12 +106,14 @@ class CreateJob extends Component {
 
                         <div className="form-group">
                             <label htmlFor="video">Video</label>
-                            <input type="file" name="video" id="video" className="form-control-file" accept="video/*" onChange={this.onSelectVideo} />
+                            <input className={`${videoError ? 'is-invalid' : ''} form-control-file`} type="file" name="video" id="video" accept="video/mp4" onChange={this.onSelectVideo} />
+                            {videoError && <div className="invalid-feedback">{videoError}</div>}
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="watermark">Watermark Image</label>
-                            <input type="file" name="watermark" id="watermark" className="form-control-file" accept="image/*" onChange={this.onSelectWatermark} />
+                            <input className={`${watermarkError ? 'is-invalid' : ''} form-control-file`} type="file" name="watermark" id="watermark" accept="image/*" onChange={this.onSelectWatermark} />
+                            {watermarkError && <div className="invalid-feedback">{watermarkError}</div>}
                         </div>
 
                         <div className="row">
